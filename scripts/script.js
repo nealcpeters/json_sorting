@@ -6,11 +6,7 @@ $.getJSON("data/data.json",
         });
 
     var tr;
-    for (var i = 0; i < data.length; i++) {
-        tr = $('<tr/>');
-        tr.append("<th>" + data[i] + "</th>");
-        $('table').append(tr);
-    }
+
     for (var i = 0; i < data.length; i++) {
         tr = $('<tr/>');
         tr.append("<td>" + data[i].carrierName + "</td>");
