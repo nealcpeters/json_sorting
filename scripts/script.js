@@ -1,4 +1,4 @@
-$.parseJSON("data/data.json",
+$.getJSON("data/data.json",
 function (data) {
     var tr;
     for (var i = 0; i < data.length; i++) {
