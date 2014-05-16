@@ -6,9 +6,11 @@ $.getJSON("data/data.json",
         });
 
     var tr;
+    var headers = Object.keys(data[1]);
 
     for (var i = 0; i < data.length; i++) {
         tr = $('<tr/>');
+        $('thead').append("<th>" + headers[i] + "</th>");
         tr.append("<td>" + data[i].carrierName + "</td>");
         tr.append("<td>" + data[i].planName + "</td>");
         tr.append("<td>" + data[i].copay + "</td>");
