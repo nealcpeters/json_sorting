@@ -1,5 +1,8 @@
 $.getJSON("data/data.json",
 function (data) {
+    data.sort(function(a, b){
+        return a.carrierName > b.carrierName;
+    });
     var tr;
     for (var i = 0; i < data.length; i++) {
         tr = $('<tr/>');
