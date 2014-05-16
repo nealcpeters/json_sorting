@@ -1,9 +1,15 @@
 $.getJSON("data/data.json",
-function (data) {
-    data.sort(function(a, b){
-        return a.carrierName > b.carrierName;
-    });
+
+    function (data) {
+        data.sort(function(a, b){
+            return a.carrierName > b.carrierName;
+        });
+
     var tr;
+    for (var i = 0; i < data.length; i++) {
+        tr = $('<tr/>');
+        tr.append("<th>" + data[i] + "</th>");
+    }
     for (var i = 0; i < data.length; i++) {
         tr = $('<tr/>');
         tr.append("<td>" + data[i].carrierName + "</td>");
