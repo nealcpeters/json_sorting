@@ -6,9 +6,10 @@ $.getJSON("data/data.json",
         });
 
     var tr;
-    for (var i = 0; i < data.length; i++) {
+    var headers = Object.keys(data);
+    for (var i = 0; i < headers.length; i++) {
         tr = $('<tr/>');
-        tr.append("<th>" + data[i] + "</th>");
+        tr.append("<th>" + headers[i] + "</th>");
     }
     for (var i = 0; i < data.length; i++) {
         tr = $('<tr/>');
