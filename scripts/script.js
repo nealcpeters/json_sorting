@@ -15,13 +15,13 @@ function DataParser(filePath){
     
     var makeTable = function(data, headers) {
         for(var i=0;i<data.length;i++){
-        $('thead').append("<th>" + headers[i] + "</th>");        
-        var obj = data[i];
-        for(var key in obj){
-            $('table').append('<tr/>');
-            $($('tr')[i]).append("<td>" + obj[key] + "</td>");
+            $('thead').append("<th>" + headers[i] + "</th>");        
+            var obj = data[i];
+            for(var key in obj){
+                $('table').append('<tr/>');
+                $($('tr')[i]).append("<td>" + obj[key] + "</td>");
+            }
         }
-    }
     }
     
     var processData = function(data){
