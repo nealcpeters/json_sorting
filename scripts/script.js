@@ -1,5 +1,4 @@
 $.getJSON("data/data.json",
-
     function (data) {
         data.sort(function(a, b){
             return a.carrierName > b.carrierName;
