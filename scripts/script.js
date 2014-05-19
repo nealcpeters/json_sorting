@@ -1,19 +1,21 @@
-function DataParser(filePath){
-    var getData = function(fPath, callBack){
-        $.getJSON(fPath, callBack)
+function JSONParser(filePath){
+    var self = this;
+
+    var getData = function(filePath, callBack){
+        $.getJSON(filePath, callBack)
     }
     
-    var sortData = function(data){
+    this.sortData = function(data){
         data.sort(function(a, b) {
           return a.carrierName > b.carrierName;
         })
     }
     
-    var getHeaders = function(data) {
+    getHeaders = function(data) {
         return Object.keys(data[1]);
     }
     
-    var makeTable = function(data, headers) {
+    makeTable = function(data, headers) {
         for(var i=0;i<data.length;i++){
             $('thead').append("<th>" + headers[i] + "</th>");        
             var obj = data[i];
@@ -24,8 +26,8 @@ function DataParser(filePath){
         }
     }
     
-    var processData = function(data){
-        sortData(data);
+    processData = function(data){
+        self.sortData(data);
         var headers = getHeaders(data);
         makeTable(data, headers)
     }
@@ -33,5 +35,24 @@ function DataParser(filePath){
     getData(filePath, processData)
 }
 
+var testing = new JSONParser("data/data.json")
 
-new DataParser("data/data.json")
+// UNCOMMENT BELOW FOR TESTING
+
+// var helper = [{
+//     "carrierName": "Zebra"
+// },{
+//     "carrierName": "Apple"
+// }]
+
+// function assert(data) {
+//   testing.sortData(data);  
+//   if (data[1]["carrierName"] == "Apple" && data[0]["carrierName"] == "Zebra") {
+//     console.log("false");
+//     throw "ERROR!";
+//   }
+//   console.log("true");
+//   return true;
+// }
+
+// assert(helper)
