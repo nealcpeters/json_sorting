@@ -46,13 +46,13 @@ var helper = [{
 }]
 
 function assert(data) {
-  testing.sortData(data);  
-  if (data[1]["carrierName"] == "Apple" && data[0]["carrierName"] == "Zebra") {
-    console.log("false");
-    throw "ERROR!";
-  }
-  console.log("true");
-  return true;
+    testing.sortData(data);  
+    if (data[1]["carrierName"] == "Apple" && data[0]["carrierName"] == "Zebra") {
+        console.log("false");
+        throw "ERROR!";
+    }
+    console.log("true");
+    return true;
 }
 
 assert(helper)
