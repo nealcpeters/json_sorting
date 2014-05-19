@@ -37,22 +37,22 @@ function JSONParser(filePath){
 
 var testing = new JSONParser("data/data.json")
 
-// UNCOMMENT BELOW FOR TESTING
+// TESTING LOGIC BELOW:
 
-// var helper = [{
-//     "carrierName": "Zebra"
-// },{
-//     "carrierName": "Apple"
-// }]
+var helper = [{
+    "carrierName": "Zebra"
+},{
+    "carrierName": "Apple"
+}]
 
-// function assert(data) {
-//   testing.sortData(data);  
-//   if (data[1]["carrierName"] == "Apple" && data[0]["carrierName"] == "Zebra") {
-//     console.log("false");
-//     throw "ERROR!";
-//   }
-//   console.log("true");
-//   return true;
-// }
+function assert(data) {
+  testing.sortData(data);  
+  if (data[1]["carrierName"] == "Apple" && data[0]["carrierName"] == "Zebra") {
+    console.log("false");
+    throw "ERROR!";
+  }
+  console.log("true");
+  return true;
+}
 
-// assert(helper)
+assert(helper)
